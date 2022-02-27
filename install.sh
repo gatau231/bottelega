@@ -1,4 +1,4 @@
-apt install python
+apt install python -y
 pip install requests
 pip install base64
 pip install telethon
