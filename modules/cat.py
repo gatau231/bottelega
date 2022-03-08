@@ -2,9 +2,10 @@
 '''
 .cat:: Анимация. \n\n<b>Использование</b>: <code>.cat</code>
 '''
+
 from telethon import events
 import asyncio
-
+#модуль предложил: t.me/b4yan
 
 def a(client):
 	@client.on(events.NewMessage(pattern=r"\.cat", outgoing=True))
