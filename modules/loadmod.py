@@ -10,8 +10,10 @@ def a(client):
 	def save_mod(link, event):
 		filename = link.split('/')[-1]
 		r = requests.get(link, allow_redirects=True)
-
-		open(f'modules/{filename}.py', 'wb').write(r.content)
+		if str(link).endswith('.py'):
+			open(f'modules/{filename}', 'wb').write(r.content)
+		else:
+			open(f'modules/{filename}.py', 'wb').write(r.content)
 
 	@client.on(events.NewMessage(pattern=r"\.dlmod", outgoing=True))
 	async def _(event):
